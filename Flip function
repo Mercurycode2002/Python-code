@@ -1,0 +1,17 @@
+import pprint
+picture  =  [[80, 80, 255, 80, 80, 255, 80, 80],
+              [80, 80, 255, 80, 80, 255, 80, 80],
+              [255, 80, 120, 120, 120, 120, 255, 80],
+              [255, 80, 255, 255, 255, 255, 80, 80],
+              [255, 80, 120, 120, 120, 120, 80, 80]]
+'function for proper display
+pprint.pprint(picture)
+for i in range(5):
+    for j in range(3):
+        'if the 2 objects that need to be switched remain then skip them 
+        if picture[i][j] != picture[i][7 -j]:
+            'switching the objects 
+            picture[i][j], picture[i][7 - j]= picture[i][j - 7],picture[i][j]
+pprint.pprint(picture)
+'made by mecurycode2002
+         
