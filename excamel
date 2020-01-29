@@ -1,0 +1,17 @@
+'Excamel'
+instring = input("Enter the string\n")
+j = 1
+i = 0
+outstring= str()
+print(instring)
+for i in range(len(instring)):
+    nextchar = instring[i:j]
+    if nextchar == nextchar.upper():
+        if i > 1:
+            outstring = outstring + " "
+        nextchar = nextchar.lower()
+    i += 1
+    j += 1
+    outstring = outstring + nextchar
+print(outstring)
+            
