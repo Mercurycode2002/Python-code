@@ -1,0 +1,20 @@
+reg = input("Enter the liscence plate:\n")
+flag = True
+
+if len(reg) < 6 and len(reg) > 9:
+    flag = False
+else:
+    for i in range(3):
+        if reg[i] != reg[i].upper():
+            flag = False
+        else:
+            for i in range(3,5):
+                if reg[i] < '0' and reg[i] > '9':
+                    flag = False
+                else:
+                    for i in range(5,len(reg)):
+                        if reg[i] != reg[i].upper():
+                            flag = False
+print(flag)   
+print(reg)
+    
