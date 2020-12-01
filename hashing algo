@@ -1,0 +1,33 @@
+import random
+def hash(x):
+    x = random.randrange(1, 100)
+    return x
+class customerid:
+    def __init__(self, hv, c):
+         self.hashvalue = hv
+         self.customer = c
+#initialising the 
+list = []
+for i in range(5):
+    list.append(customerid(0, i))
+for x in range(len(list)):
+    p = hash(list[x].hashvalue)
+    list[x].hashvalue = p
+    print(list[x].hashvalue, list[x].customer)
+#checking if a value repeats, hash must be unique
+for k in range(len(list)):
+    if  p == list[k].hashvalue:
+        list[k].hashvalue = hash(k)
+        print(list[k].hashvalue, list[k].customer, "there was a copy")
+    else:
+        continue
+#search for a hash
+def search(searchvalue):
+    for b in range(len(list)):
+        if searchvalue == list[b].hashvalue:
+            print(list[b].hashvalue, "There customer id is", list[b].customer)
+        else:
+            continue
+            
+    
+        
