@@ -1,0 +1,42 @@
+class BT:
+    def __init__(self, lp , data , rp):
+        self.LeftPointer = lp
+        self.data = data
+        self.RightPointer = rp
+dsBT = []
+for j in range(3):
+    dsBT.append(BT( 0 , None , 0 ))
+    
+def insert(x):
+    t = 0
+    while True:
+        if dsBT[0].data == None :
+            dsBT[0].data = x
+            print("it works" )
+            break
+        else:
+            if x > dsBT[0].data:
+                while dsBT[t].RightPointer == 0 :
+                    t += 1
+                    print("we r stuck")
+                    break
+                dsBT[t].RightPointer = t 
+                print("we not suppose to b here", t)
+                dsBT[t].data = x
+                break
+            else:
+                while dsBT[t].LeftPointer == 0:
+                    t += 1
+                    print("get me out", t)
+                    break
+                dsBT[t].LeftPointer = t
+                dsBT[t].data = x
+                break
+    
+               
+for h in range(len(dsBT)):
+    #video game name
+    vgm = input(str("enter the game name:\n"))
+    insert(vgm)
+for i in range(len(dsBT)):
+    print(dsBT[i].LeftPointer , dsBT[i].data ,dsBT[i].RightPointer)
