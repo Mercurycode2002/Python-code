@@ -1,0 +1,30 @@
+# x = the thing to check, st ; start , f ; finish
+
+def bs(x , st , f):
+    if int((st + f)%2) == 1:
+        mid = int(( f + 1)/2)
+        if x == namelist[mid]:
+            return(mid)
+        elif x > namelist[mid]:
+            return(bs(x , mid + 1 , f ))
+        else:
+            return(bs(x , 0 , mid - 1))
+        
+    else:
+        mid = int((st + f)/2)
+        if x == namelist[mid]:
+            return(mid)
+        elif x > namelist[mid]:
+            return(bs(x , mid + 1 , f ))
+        else:
+            return(bs(x , st , mid - 1))
+    pass                  
+        
+namelist = ["qasim","ayesha", "hussain", "zoya","idiot" ,"sarim" ]
+namelist.sort()
+x = input("what do want to search: \n")
+check = bs(x , 0 , len(namelist) )
+if check == -1:
+    print("error")
+else: 
+    print("I found it: \n", check)
