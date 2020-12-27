@@ -1,42 +1,47 @@
+#Binary Tree Using list
+
 class BT:
     def __init__(self, lp , data , rp):
         self.LeftPointer = lp
         self.data = data
         self.RightPointer = rp
-dsBT = []
-for j in range(3):
-    dsBT.append(BT( 0 , None , 0 ))
-    
+        
+        
 def insert(x):
-    t = 0
-    while True:
-        if dsBT[0].data == None :
-            dsBT[0].data = x
-            print("it works" )
-            break
-        else:
-            if x > dsBT[0].data:
-                while dsBT[t].RightPointer == 0 :
-                    t += 1
-                    print("we r stuck")
-                    break
-                dsBT[t].RightPointer = t 
-                print("we not suppose to b here", t)
-                dsBT[t].data = x
-                break
+    fp = 0
+    if dsBT[0].data == None:
+        dsBT[0].data = x
+    else:
+        while x > dsBT[fp].data:
+            if dsBT[fp].RightPointer == 0 and x > dsBT[fp].data:
+                dsBT[fp].RightPointer = h
+                break 
             else:
-                while dsBT[t].LeftPointer == 0:
-                    t += 1
-                    print("get me out", t)
+                while True:
+                    fp += 1
+                    print("we r here", fp)
                     break
-                dsBT[t].LeftPointer = t
-                dsBT[t].data = x
-                break
-    
-               
+        while x < dsBT[fp].data:
+            if dsBT[fp].LeftPointer == 0 and x < dsBT[fp].data :
+                dsBT[fp].LeftPointer = h
+                break 
+            else:
+                while True:
+                    fp += 1
+                    print("somewhere r here", fp)
+                    break
+        
+        
+                
+            
+dsBT = []
+for j in range(7):
+    dsBT.append(BT( 0 , None , 0 ))
 for h in range(len(dsBT)):
+    fp = 0
     #video game name
-    vgm = input(str("enter the game name:\n"))
-    insert(vgm)
+    vgn = input(str("enter the game name:\n"))
+    dsBT[h].data = vgn
+    insert(vgn)
 for i in range(len(dsBT)):
     print(dsBT[i].LeftPointer , dsBT[i].data ,dsBT[i].RightPointer)
