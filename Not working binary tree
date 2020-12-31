@@ -1,47 +1,38 @@
 #Binary Tree Using list
 
 class BT:
-    def __init__(self, lp , data , rp):
-        self.LeftPointer = lp
+    def __init__(self,  data ):
+        self.LeftPointer = 0
         self.data = data
-        self.RightPointer = rp
-        
-        
-def insert(x):
-    fp = 0
-    if dsBT[0].data == None:
-        dsBT[0].data = x
-    else:
-        while x > dsBT[fp].data:
-            if dsBT[fp].RightPointer == 0 and x > dsBT[fp].data:
-                dsBT[fp].RightPointer = h
-                break 
-            else:
-                while True:
-                    fp += 1
-                    print("we r here", fp)
-                    break
-        while x < dsBT[fp].data:
-            if dsBT[fp].LeftPointer == 0 and x < dsBT[fp].data :
-                dsBT[fp].LeftPointer = h
-                break 
-            else:
-                while True:
-                    fp += 1
-                    print("somewhere r here", fp)
-                    break
-        
-        
-                
-            
+        self.RightPointer = 0
+
+def insert(x, y):
+    fp = y
+    if x > dsBT[fp].data:
+        if dsBT[fp].RightPointer == 0:
+            dsBT[fp].RightPointer = h
+            print("here", fp)
+        elif dsBT[fp].RightPointer != 0:
+            fp = dsBT[fp].RightPointer
+            print("here 2 ", fp)
+            insert( x ,fp)
+    if x < dsBT[fp].data:
+        if dsBT[fp].LeftPointer == 0:
+            dsBT[fp].LeftPointer = h
+            print("here", fp)
+        elif dsBT[fp].LeftPointer != 0:
+            fp = dsBT[fp].LeftPointer
+            print("here 2 ", fp)
+            insert( x ,fp)
 dsBT = []
 for j in range(7):
-    dsBT.append(BT( 0 , None , 0 ))
+    dsBT.append(BT( None))
 for h in range(len(dsBT)):
     fp = 0
-    #video game name
-    vgn = input(str("enter the game name:\n"))
+    # video game name
+    vgn = input(str("enter the game's name:\n"))
     dsBT[h].data = vgn
-    insert(vgn)
+    insert(vgn , 0)
 for i in range(len(dsBT)):
-    print(dsBT[i].LeftPointer , dsBT[i].data ,dsBT[i].RightPointer)
+    print(dsBT[i].LeftPointer, dsBT[i].data, dsBT[i].RightPointer)
+
