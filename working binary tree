@@ -25,7 +25,8 @@ def insert(x, y):
             print("here 2 ", fp)
             insert( x ,fp)
 dsBT = []
-for j in range(7):
+l = input("how much data do you want to enter:\n")
+for j in range(int(l)):
     dsBT.append(BT( None))
 for h in range(len(dsBT)):
     fp = 0
